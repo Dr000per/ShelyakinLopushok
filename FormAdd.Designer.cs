@@ -1,4 +1,4 @@
-﻿namespace SolovovLopushok
+﻿namespace ShelyakinLopushok
 {
     partial class FormAdd
     {

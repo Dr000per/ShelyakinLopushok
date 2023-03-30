@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SolovovLopushok
+namespace ShelyakinLopushok
 {
     public partial class MainForm : Form
     {
@@ -88,19 +88,23 @@ namespace SolovovLopushok
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            using(DataBase db = new DataBase())
+            if (MessageBox.Show("Точно удалить?", "РЕШИТЕ", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                db.ExecuteNonQuery($"delete from productmaterial where productid = {products.Rows[page].ItemArray[0]}");
-                db.ExecuteNonQuery($"delete from product where ArticleNumber = '{products.Rows[page].ItemArray[3]}'");
+                using (DataBase db = new DataBase())
+                {
+                    db.ExecuteNonQuery($"delete from productmaterial where productid = {products.Rows[page].ItemArray[0]}");
+                    db.ExecuteNonQuery($"delete from product where ArticleNumber = '{products.Rows[page].ItemArray[3]}'");
 
-                MessageBox.Show("Вы успешно удалили данные о выбранном продукте!");
+                    MessageBox.Show("Вы успешно удалили данные о выбранном продукте!");
 
-                products = db.ExecuteSql($"select  product.id, producttype.title, product.title, product.articlenumber, product.MinCostForAgent, product.Image, product.ProductionPersonCount, product.ProductionWorkshopNumber from product, producttype where product.ProductTypeID = producttype.id");
-                prodID = db.ExecuteSql($"select productid from productmaterial");
-                
-                SelectPageData();
+                    products = db.ExecuteSql($"select  product.id, producttype.title, product.title, product.articlenumber, product.MinCostForAgent, product.Image, product.ProductionPersonCount, product.ProductionWorkshopNumber from product, producttype where product.ProductTypeID = producttype.id");
+                    prodID = db.ExecuteSql($"select productid from productmaterial");
+
+                    SelectPageData();
+                }
             }
         }
+            
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {

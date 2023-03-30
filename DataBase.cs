@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace SolovovLopushok
+namespace ShelyakinLopushok
 {
     public class DataBase : IDisposable
     {

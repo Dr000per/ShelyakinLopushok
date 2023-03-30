@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SolovovLopushok
+namespace ShelyakinLopushok
 {
     public partial class FormAdd : Form
     {

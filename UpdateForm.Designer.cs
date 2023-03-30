@@ -1,4 +1,4 @@
-﻿namespace SolovovLopushok
+﻿namespace ShelyakinLopushok
 {
     partial class UpdateForm
     {
@@ -75,6 +75,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateForm";
             this.Text = "Изменить стоимость";
+            this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

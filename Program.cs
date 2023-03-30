@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SolovovLopushok
+namespace ShelyakinLopushok
 {
     internal static class Program
     {
