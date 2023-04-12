@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_prod_type = new System.Windows.Forms.TextBox();
             this.buttonGo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox_prod_type = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +67,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 203);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox_prod_type
+            // 
+            this.textBox_prod_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox_prod_type.Location = new System.Drawing.Point(184, 130);
+            this.textBox_prod_type.Name = "textBox_prod_type";
+            this.textBox_prod_type.Size = new System.Drawing.Size(121, 20);
+            this.textBox_prod_type.TabIndex = 6;
             // 
             // buttonGo
             // 
@@ -212,14 +220,6 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox_prod_type
-            // 
-            this.textBox_prod_type.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox_prod_type.Location = new System.Drawing.Point(184, 130);
-            this.textBox_prod_type.Name = "textBox_prod_type";
-            this.textBox_prod_type.Size = new System.Drawing.Size(121, 20);
-            this.textBox_prod_type.TabIndex = 6;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,11 +246,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCost;
+        public System.Windows.Forms.TextBox textBoxCost;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxTitle;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox textBoxTitle;
+        public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonGo;
         private System.Windows.Forms.Panel panel2;
@@ -258,7 +258,7 @@
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox_prod_type;
+        public System.Windows.Forms.TextBox textBox_prod_type;
     }
 }
 

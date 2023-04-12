@@ -12,7 +12,7 @@ namespace ShelyakinLopushok
     {
         // private string _connectionString = @"Server = db.edu.cchgeu.ru;DataBase = 193_Shelylin;User = 193_Shelylin;Password = 193_Shelylin";
         private string _connectionString = @"Data Source = DESKTOP-BBAJL13\SQLEXPRESS; Initial Catalog = Lopushok; Integrated Security = True";
-        private SqlConnection _connection;
+        public SqlConnection _connection;
 
         public DataBase()
         {
@@ -20,14 +20,31 @@ namespace ShelyakinLopushok
             OpenConnection();
         }
 
-        private void OpenConnection()
+        public Boolean OpenConnection()
         {
-            _connection.Open();
+            try
+            {
+                _connection = new SqlConnection(_connectionString);
+                _connection.Open();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        private void CloseConnection()
+        public Boolean CloseConnection()
         {
-            _connection.Close();
+            try
+            {
+                _connection.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public DataTable ExecuteSql(string sql)
@@ -39,10 +56,12 @@ namespace ShelyakinLopushok
             return table;
         }
 
-        public void ExecuteNonQuery(string sql)
+        public Boolean ExecuteNonQuery(string sql)
         {
             SqlCommand command = new SqlCommand(sql, _connection);
             command.ExecuteNonQuery();
+
+            return true;
         }
 
         public void Dispose()

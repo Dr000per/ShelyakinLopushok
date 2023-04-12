@@ -37,20 +37,34 @@ namespace ShelyakinLopushok
 
         private void button_insert_Click(object sender, EventArgs e)
         {
-            string title = textBox_title.Text;
-            string article = textBox_artic_num.Text;
-            double mincost = Convert.ToDouble(textBox_min_cost_for_ag.Text);
-            string image = textBox_image_path.Text;
-            int pers_count = Convert.ToInt32(textBox_prod_per_count.Text);
-            int workshop_num = Convert.ToInt32(textBox_prod_workshop_num.Text);
+            if (Insert_But(textBox_title.Text, textBox_artic_num.Text, textBox_min_cost_for_ag.Text, textBox_image_path.Text, textBox_prod_per_count.Text, textBox_prod_workshop_num.Text, comboBox_product_type.SelectedItem))
+            {
+                MessageBox.Show("Продукт успешно добавлен!");
+            }
+            else
+            {
+                MessageBox.Show("Не получилось!");
+            }
+
+        }
+
+        public Boolean Insert_But(string title1, string article1, object mincost1, string image1, object pers_count1, object workshop_num1, object comboBox)
+        {
+            string title = title1;
+            string article = article1;
+            double mincost = Convert.ToDouble(mincost1);
+            string image = image1;
+            int pers_count = Convert.ToInt32(pers_count1);
+            int workshop_num = Convert.ToInt32(workshop_num1);
+            object comb_title = comboBox;
             try
             {
-                db.ExecuteNonQuery($"insert into Product values ((select id from producttype where title = '{comboBox_product_type.SelectedItem}'), '{title}', '{article}', {mincost}, '{image}', {pers_count}, {workshop_num});");
-                MessageBox.Show("Продукт добавлен");
+                db.ExecuteNonQuery($"insert into Product values ((select id from producttype where title = '{comb_title}'), '{title}', '{article}', {mincost}, '{image}', {pers_count}, {workshop_num});");
+                return true;
             }
             catch
             {
-                MessageBox.Show("Продукт неудалось добавить");
+                return false;
             }
         }
     }
