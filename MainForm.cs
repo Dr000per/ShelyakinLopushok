@@ -314,6 +314,8 @@ namespace ShelyakinLopushok
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             page = 0;
+            linkLabel3.Text = 3.ToString();
+            linkLabel4.Text = 4.ToString();
             SelectPageData(products.Rows[page].ItemArray[5].ToString(), products.Rows[page].ItemArray[2].ToString(), products.Rows[page].ItemArray[4].ToString(), products.Rows[page].ItemArray[1].ToString(), products.Rows[page].ItemArray[3].ToString(),
             products.Rows[page + 1].ItemArray[5].ToString(), products.Rows[page + 1].ItemArray[2].ToString(), products.Rows[page + 1].ItemArray[4].ToString(), products.Rows[page + 1].ItemArray[1].ToString(), products.Rows[page + 1].ItemArray[3].ToString(),
             products.Rows[page + 2].ItemArray[5].ToString(), products.Rows[page + 2].ItemArray[2].ToString(), products.Rows[page + 2].ItemArray[4].ToString(), products.Rows[page + 2].ItemArray[1].ToString(), products.Rows[page + 2].ItemArray[3].ToString(),
